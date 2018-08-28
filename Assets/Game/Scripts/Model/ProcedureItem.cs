@@ -23,7 +23,20 @@ public class ProcedureItem : Item
     {
         switch (name)
         {
+            case "start_practice":
+                EnableAcupoint();
+                break;
+        }
+        GameObject.Destroy(GameObject.Find(name));
+    }
 
+    private void EnableAcupoint()
+    {
+        GameObject[] acupointObjects = GameObject.FindGameObjectsWithTag("Acupoint");
+        foreach(GameObject o in acupointObjects)
+        {
+            SphereCollider collider = o.GetComponent<SphereCollider>();
+            collider.enabled = true;
         }
     }
 }

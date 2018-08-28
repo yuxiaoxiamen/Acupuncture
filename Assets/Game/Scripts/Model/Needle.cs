@@ -5,11 +5,12 @@ using UnityEngine;
 //针
 public class Needle : Handle
 {
+
     public override void OnHandleClick(object sender, ClickedEventArgs e)
     {
+        Item item = null;
         if (IsInItem)
         {
-            Item item = null;
             switch (CurrentObject.tag)
             {
                 case "SwitchScene":
@@ -22,7 +23,10 @@ public class Needle : Handle
                     item = ProcedureItem.GetInstance();
                     break;
             }
-            item.Dispose(CurrentObject.name);
+            if(item != null)
+            {
+                item.Dispose(CurrentObject.name);
+            }
         }
     }
 

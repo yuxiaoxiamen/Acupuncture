@@ -4,4 +4,17 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Game/Scenes/Start.unity
+    guid: ccaff3f3cb0ce414fa8b0493e335b459
+  - enabled: 1
+    path: Assets/Game/Scenes/AcuPractice.unity
+    guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Game/Scenes/DifficultChoice.unity
+    guid: 984c427500b18004faf92b84d3037f5b
+  - enabled: 1
+    path: Assets/Game/Scenes/AcuAssess.unity
+    guid: 9f3fd19dfa7479f4fb2ddd4861d631bb
+  m_configObjects: {}

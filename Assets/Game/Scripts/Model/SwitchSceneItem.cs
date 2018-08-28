@@ -22,15 +22,19 @@ public class SwitchSceneItem : Item{
 
     public void Dispose(string name)
     {
-        //如果是返回对象，则取出要返回的场景名，否则就直接切换到对象名对应的场景
-        if (name.StartsWith("return"))
+        string[] nameSplit = name.Split('_');
+        //取出要返回的场景名
+        string sceneName = nameSplit[1];
+        //记录考核场景的难度系数，是否处在考核场景
+        if(sceneName.Equals("AcuAssess"))
         {
-            string sceneName = name.Split('_')[1];
-            SceneManager.LoadScene(sceneName);
+            Status.GetInstance().DifficultyDegree = int.Parse(nameSplit[2]);
+            Status.GetInstance().IsAssess = true;
         }
-        else
+        if (sceneName.Equals("AcuPractice"))
         {
-            SceneManager.LoadScene(name);
+            Status.GetInstance().IsAssess = false;
         }
+        SceneManager.LoadScene(sceneName);
     }
 }

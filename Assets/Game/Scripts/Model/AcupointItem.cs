@@ -21,7 +21,14 @@ public class AcupointItem : Item {
 
     public void Dispose(string name)
     {
-        Tool.GetInstance().DisplayText(GetAcupointText(name));
+        if (Status.GetInstance().IsAssess)
+        {
+
+        }
+        else
+        {
+            Tool.GetInstance().DisplayText(GetAcupointText(name));
+        }
     }
 
     private string GetAcupointText(string name)

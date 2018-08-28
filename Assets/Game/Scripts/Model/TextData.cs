@@ -6,10 +6,12 @@ public class TextData{
     private static TextData singleInstance;
     public Dictionary<string, string> AcupointureDescriptions { get; set; }
     public Dictionary<string, string> MassageDescriptions { get; set; }
+    public List<string> AllAcupoints { get; set; }
 
     private TextData() {
         AcupointureDescriptions = new Dictionary<string, string>();
         MassageDescriptions = new Dictionary<string, string>();
+        AllAcupoints = new List<string>(new HashSet<string>(AcupointureDescriptions.Keys));
     }
 
     public static TextData GetInstance()

@@ -23,7 +23,7 @@ public class LoadData : MonoBehaviour {
     List<string> LoadAllLineToList(string fileName)
     {
         List<string> list = new List<string>();
-        string texts = Resources.Load(fileName).ToString();
+        string texts = Resources.Load("texts/"+fileName).ToString();
         using (System.IO.StringReader reader = new System.IO.StringReader(texts))
         {
             string line;

@@ -61,6 +61,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Game\Scripts\DifficultControl.cs" />
     <Compile Include="Assets\Game\Scripts\HandleControl.cs" />
     <Compile Include="Assets\Game\Scripts\LoadData.cs" />
     <Compile Include="Assets\Game\Scripts\Model\AcupointItem.cs" />
@@ -68,9 +69,11 @@
     <Compile Include="Assets\Game\Scripts\Model\Item.cs" />
     <Compile Include="Assets\Game\Scripts\Model\Needle.cs" />
     <Compile Include="Assets\Game\Scripts\Model\ProcedureItem.cs" />
+    <Compile Include="Assets\Game\Scripts\Model\Status.cs" />
     <Compile Include="Assets\Game\Scripts\Model\SwitchSceneItem.cs" />
     <Compile Include="Assets\Game\Scripts\Model\TextData.cs" />
     <Compile Include="Assets\Game\Scripts\Model\Tool.cs" />
+    <Compile Include="Assets\Game\Scripts\QuestionControl.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_GazeTracker.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_LaserPointer.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_Teleporter.cs" />
@@ -177,9 +180,9 @@
     <None Include="Assets\SteamVR\Resources\SteamVR_ClearAll.shader" />
     <None Include="Assets\SteamVR\InteractionSystem\Hints\Shaders\ControllerButtonHints.shader" />
     <None Include="Assets\SteamVR\InteractionSystem\Teleport\Shaders\Highlight.shader" />
-    <None Include="Assets\Game\Resources\massage_description.txt" />
-    <None Include="Assets\Game\Resources\acupoint_name.txt" />
-    <None Include="Assets\Game\Resources\acupuncture_description.txt" />
+    <None Include="Assets\Game\Resources\texts\massage_description.txt" />
+    <None Include="Assets\Game\Resources\texts\acupoint_name.txt" />
+    <None Include="Assets\Game\Resources\texts\acupuncture_description.txt" />
     <None Include="Assets\SteamVR\Resources\SteamVR_SphericalProjection.shader" />
     <None Include="Assets\SteamVR\Resources\SteamVR_AlphaOut.shader" />
     <None Include="Assets\SteamVR\readme.txt" />

@@ -17,6 +17,7 @@ public class Tool{
         }
         return singleInstace;
     }
+
 	public void DisplayText(string text)
     {
         GameObject textGameObject = GameObject.FindGameObjectWithTag("Text");
