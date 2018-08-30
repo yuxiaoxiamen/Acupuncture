@@ -26,6 +26,12 @@ public class ProcedureItem : Item
             case "start_practice":
                 EnableAcupoint();
                 break;
+            case "start_assess":
+                EnableAcupoint();
+                EnableBody();
+                GameObject.FindGameObjectWithTag("GameController").
+                    GetComponent<QuestionControl>().enabled = true;
+                break;
         }
         GameObject.Destroy(GameObject.Find(name));
     }
@@ -38,5 +44,10 @@ public class ProcedureItem : Item
             SphereCollider collider = o.GetComponent<SphereCollider>();
             collider.enabled = true;
         }
+    }
+
+    private void EnableBody()
+    {
+        GameObject.FindGameObjectWithTag("Body").GetComponent<MeshCollider>().enabled = true;
     }
 }

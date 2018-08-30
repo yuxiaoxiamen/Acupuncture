@@ -11,7 +11,6 @@ public class TextData{
     private TextData() {
         AcupointureDescriptions = new Dictionary<string, string>();
         MassageDescriptions = new Dictionary<string, string>();
-        AllAcupoints = new List<string>(new HashSet<string>(AcupointureDescriptions.Keys));
     }
 
     public static TextData GetInstance()

@@ -22,6 +22,9 @@ public class Needle : Handle
                 case "Procedure":
                     item = ProcedureItem.GetInstance();
                     break;
+                case "Body":
+                    item = BodyItem.GetInstance();
+                    break;
             }
             if(item != null)
             {

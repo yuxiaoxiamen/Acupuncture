@@ -8,7 +8,7 @@ public class Status{
     public int DifficultyDegree { get; set; }
     public bool IsAssess { get; set; }
     public string CurrentQuestion { get; set; }
-    public bool CurrentAnswer { get; set; }
+    public string CurrentAnswer { get; set; }
 
     private Status() { }
 

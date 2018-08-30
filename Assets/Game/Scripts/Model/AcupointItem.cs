@@ -23,7 +23,8 @@ public class AcupointItem : Item {
     {
         if (Status.GetInstance().IsAssess)
         {
-
+            Status.GetInstance().CurrentAnswer = name;
+            QuestionControl.GetInstance().SetNextQuestion();
         }
         else
         {

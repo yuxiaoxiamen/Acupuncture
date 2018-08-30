@@ -61,14 +61,25 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\DOTween\Modules\DOTweenModuleAudio.cs" />
+    <Compile Include="Assets\DOTween\Modules\DOTweenModulePhysics.cs" />
+    <Compile Include="Assets\DOTween\Modules\DOTweenModulePhysics2D.cs" />
+    <Compile Include="Assets\DOTween\Modules\DOTweenModuleSprite.cs" />
+    <Compile Include="Assets\DOTween\Modules\DOTweenModuleUI.cs" />
+    <Compile Include="Assets\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
+    <Compile Include="Assets\DOTween\Modules\DOTweenModuleUtils.cs" />
     <Compile Include="Assets\Game\Scripts\DifficultControl.cs" />
+    <Compile Include="Assets\Game\Scripts\DisplayLeaderboard.cs" />
     <Compile Include="Assets\Game\Scripts\HandleControl.cs" />
     <Compile Include="Assets\Game\Scripts\LoadData.cs" />
     <Compile Include="Assets\Game\Scripts\Model\AcupointItem.cs" />
+    <Compile Include="Assets\Game\Scripts\Model\BodyItem.cs" />
+    <Compile Include="Assets\Game\Scripts\Model\Grade.cs" />
     <Compile Include="Assets\Game\Scripts\Model\Handle.cs" />
     <Compile Include="Assets\Game\Scripts\Model\Item.cs" />
     <Compile Include="Assets\Game\Scripts\Model\Needle.cs" />
     <Compile Include="Assets\Game\Scripts\Model\ProcedureItem.cs" />
+    <Compile Include="Assets\Game\Scripts\Model\SaveModel.cs" />
     <Compile Include="Assets\Game\Scripts\Model\Status.cs" />
     <Compile Include="Assets\Game\Scripts\Model\SwitchSceneItem.cs" />
     <Compile Include="Assets\Game\Scripts\Model\TextData.cs" />
@@ -179,6 +190,7 @@
     <None Include="Assets\SteamVR\Resources\SteamVR_Fade.shader" />
     <None Include="Assets\SteamVR\Resources\SteamVR_ClearAll.shader" />
     <None Include="Assets\SteamVR\InteractionSystem\Hints\Shaders\ControllerButtonHints.shader" />
+    <None Include="Assets\DOTween\readme.txt" />
     <None Include="Assets\SteamVR\InteractionSystem\Teleport\Shaders\Highlight.shader" />
     <None Include="Assets\Game\Resources\texts\massage_description.txt" />
     <None Include="Assets\Game\Resources\texts\acupoint_name.txt" />
@@ -405,6 +417,9 @@
     </Reference>
     <Reference Include="UnityEngine.StandardEvents">
       <HintPath>C:/Users/admin/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween">
+      <HintPath>C:/Users/admin/Documents/GitHub/Acupuncture/Assets/DOTween/DOTween.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unity/mscorlib.dll</HintPath>

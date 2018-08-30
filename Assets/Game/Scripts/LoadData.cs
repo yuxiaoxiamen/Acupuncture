@@ -6,13 +6,23 @@ public class LoadData : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
-        LoadAcupointDetail("acupuncture_description", TextData.GetInstance().AcupointureDescriptions);
-        LoadAcupointDetail("massage_description", TextData.GetInstance().MassageDescriptions);
+
+        if(TextData.GetInstance().AllAcupoints == null)
+        {
+            LoadAllAcupoints();
+            LoadAcupointDetail("acupuncture_description", TextData.GetInstance().AcupointureDescriptions);
+            LoadAcupointDetail("massage_description", TextData.GetInstance().MassageDescriptions);
+        }
+    }
+
+    void LoadAllAcupoints()
+    {
+        TextData.GetInstance().AllAcupoints = LoadAllLineToList("acupoint_name");
     }
 
     void LoadAcupointDetail(string fileName, Dictionary<string, string> pairs)
     {
-        List<string> acupoints = LoadAllLineToList("acupoint_name");
+        List<string> acupoints = TextData.GetInstance().AllAcupoints;
         List<string> details = LoadAllLineToList(fileName);
         for(int i = 0; i < acupoints.Count; ++i)
         {

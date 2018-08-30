@@ -8,6 +8,8 @@ TagManager:
   - SwitchScene
   - Procedure
   - Text
+  - Body
+  - Tip
   layers:
   - Default
   - TransparentFX
