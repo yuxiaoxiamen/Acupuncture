@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class LoadData : MonoBehaviour {
 
-	// Use this for initialization
 	void Awake () {
 
+        //只加载一次
         if(TextData.GetInstance().AllAcupoints == null)
         {
-            LoadAllAcupoints();
-            LoadAcupointDetail("acupuncture_description", TextData.GetInstance().AcupointureDescriptions);
-            LoadAcupointDetail("massage_description", TextData.GetInstance().MassageDescriptions);
+            LoadAllAcupoints();//加载所有穴位名
+            LoadAcupointDetail("acupuncture_description", TextData.GetInstance().AcupointureDescriptions);//加载穴位的描述
+            LoadAcupointDetail("massage_description", TextData.GetInstance().MassageDescriptions);//加载按摩信息
         }
     }
 
@@ -26,10 +26,11 @@ public class LoadData : MonoBehaviour {
         List<string> details = LoadAllLineToList(fileName);
         for(int i = 0; i < acupoints.Count; ++i)
         {
-            pairs.Add(acupoints[i], details[i]);
+            pairs.Add(acupoints[i], details[i]);//穴位名为键，信息为值
         }
     }
 
+    //将文件一行一行的读出，并返回所有行的list
     List<string> LoadAllLineToList(string fileName)
     {
         List<string> list = new List<string>();

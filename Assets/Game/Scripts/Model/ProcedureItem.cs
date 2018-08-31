@@ -23,10 +23,10 @@ public class ProcedureItem : Item
     {
         switch (name)
         {
-            case "start_practice":
+            case "start_practice"://如果是练习，就使穴位有效
                 EnableAcupoint();
                 break;
-            case "start_assess":
+            case "start_assess"://如果使考核，则使身体也有效，并且开始答题
                 EnableAcupoint();
                 EnableBody();
                 GameObject.FindGameObjectWithTag("GameController").
@@ -36,6 +36,7 @@ public class ProcedureItem : Item
         GameObject.Destroy(GameObject.Find(name));
     }
 
+    //使穴位对象的碰撞体有效
     private void EnableAcupoint()
     {
         GameObject[] acupointObjects = GameObject.FindGameObjectsWithTag("Acupoint");
@@ -46,6 +47,7 @@ public class ProcedureItem : Item
         }
     }
 
+    //使身体对象的碰撞体有效
     private void EnableBody()
     {
         GameObject.FindGameObjectWithTag("Body").GetComponent<MeshCollider>().enabled = true;

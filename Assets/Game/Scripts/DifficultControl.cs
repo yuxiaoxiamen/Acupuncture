@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//考核场景控制难度
 public class DifficultControl : MonoBehaviour {
 
-	// Use this for initialization
 	void Start () {
+        //如果是进阶，就将穴位设为透明
 		if(Status.GetInstance().DifficultyDegree == 2)
         {
             GameObject[] acupointObjects = GameObject.FindGameObjectsWithTag("Acupoint");

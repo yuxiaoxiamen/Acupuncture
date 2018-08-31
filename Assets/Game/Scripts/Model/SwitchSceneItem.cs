@@ -25,7 +25,7 @@ public class SwitchSceneItem : Item{
         string[] nameSplit = name.Split('_');
         //取出要返回的场景名
         string sceneName = nameSplit[1];
-        //记录考核场景的难度系数，是否处在考核场景
+        //如果是跳转到考核场景，记录考核场景的难度系数，是否处在考核场景
         if(sceneName.Equals("AcuAssess"))
         {
             Status.GetInstance().DifficultyDegree = int.Parse(nameSplit[2]);
@@ -35,6 +35,6 @@ public class SwitchSceneItem : Item{
         {
             Status.GetInstance().IsAssess = false;
         }
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(sceneName);//跳转场景
     }
 }

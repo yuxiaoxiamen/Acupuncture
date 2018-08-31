@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//身体对象
 public class BodyItem : Item {
 
     //单例对象
@@ -20,7 +21,7 @@ public class BodyItem : Item {
 
     public void Dispose(string name)
     {
-        if (Status.GetInstance().IsAssess)
+        if (Status.GetInstance().IsAssess)//针扎身体，开启下一题
         {
             Status.GetInstance().CurrentAnswer = name;
             QuestionControl.GetInstance().SetNextQuestion();

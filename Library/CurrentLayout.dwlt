@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -43,7 +43,7 @@ MonoBehaviour:
     y: 0
     width: 1680
     height: 967
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -109,7 +109,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 49
+  controlID: 33
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 50
+  controlID: 34
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 51
+  controlID: 11
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -369,7 +369,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 5c7bf4ff60aaf4fff6daf4ff38e3f4ff5ce9f4ff2a5bf5ffda15f6ffe626f6ffc039f6ffb03af6ffe25df6ffc271f6ff828df6fffc8ef6ffa890f6ffd0a4f6ff88c9f6ff8ccdf6fff4e2f6ff68f9f6ffa6fcf6ff16fff6ffe200f7ffb002f7ff6404f7ff1806f7fff807f7fffc23f7ff783cf7fff249f7ffe260f7ffde94f7ffc8aaf7ff1eaef7ff26e6f7ffa263f8ffe672f9ff121bfaff80c4faff98e8faffe22afcfffa30fcff5e36fcff5438fcff503afcff5a3cfcffe84cfcff548dfdff1892fdff3097fdff8098fdff4e9afdffec9cfdffba9efdff84a0fdff68b3fdffa8b7fdff88bcfdff6ec0fdffdac8fdfffecdfdff10d7fdff261efeffc02dfeff3630feff4068feff8a95feffc6b4feffb6bdfeff72bffeffdac2feffb6f0fefff61cffffc61fffff4231ffff0c38ffff7240ffff2641ffff3c49ffffa055ffffce61ffff2268ffffa88dffff3aa9fffffeb8ffffe2bfffff86ccffff3acdffffa0d3ffffdad5ffff90d8fffffedafffff2dcffff98e5ffffe6fbffff00000000d67400002a8900004c890000ae8d0000d08d00002c95000050950000709e0000929e000054a20000
+    m_ExpandedIDs: bee4ffff32f2ffffe6fbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -456,7 +456,7 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: -0.026007166, y: 0.725211, z: -0.02743538, w: -0.6874881}
     speed: 2
-    m_Value: {x: -0.026007168, y: 0.7252111, z: -0.027435381, w: -0.68748814}
+    m_Value: {x: -0.026007166, y: 0.725211, z: -0.02743538, w: -0.6874881}
   m_Size:
     m_Target: 29.259634
     speed: 2
@@ -534,34 +534,34 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Game/Scenes
+    - Assets/Game
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Game/Scenes
+  - Assets/Game
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\admin\Documents\GitHub\Acupuncture
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 7c2b0000
-    m_LastClickedID: 11132
-    m_ExpandedIDs: 00000000f22a00007a2b0000e82d0000b6300000b830000000ca9a3b
+    m_SelectedIDs: 9e2b0000
+    m_LastClickedID: 11166
+    m_ExpandedIDs: 00000000142b00001c2e0000fa300000fc30000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: SteamVR
+      m_OriginalName: SteamVR
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 11574
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 10}
     m_SearchString: 
@@ -575,7 +575,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000f22a00007a2b0000062d0000e82d00006a2e0000b6300000b8300000
+    m_ExpandedIDs: 00000000142b00009e2b00001c2e0000fa300000fc300000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

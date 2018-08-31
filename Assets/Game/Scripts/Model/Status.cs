@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//记录一些状态或着场景之间要传递的数据
 public class Status{
 
-    private static Status singleInstance;
-    public int DifficultyDegree { get; set; }
-    public bool IsAssess { get; set; }
-    public string CurrentQuestion { get; set; }
-    public string CurrentAnswer { get; set; }
+    private static Status singleInstance;//单例对象
+    public int DifficultyDegree { get; set; }//考核难度
+    public bool IsAssess { get; set; }//是否在考核场景
+    public string CurrentQuestion { get; set; }//当前问题
+    public string CurrentAnswer { get; set; }//当前答案
 
     private Status() { }
 

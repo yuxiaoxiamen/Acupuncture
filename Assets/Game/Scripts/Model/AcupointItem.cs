@@ -21,17 +21,19 @@ public class AcupointItem : Item {
 
     public void Dispose(string name)
     {
+        //如果是考核，记录当前穴位名字作为答案，并开启下一题
         if (Status.GetInstance().IsAssess)
         {
             Status.GetInstance().CurrentAnswer = name;
             QuestionControl.GetInstance().SetNextQuestion();
         }
-        else
+        else//如果是练习，就显示穴位的信息
         {
             Tool.GetInstance().DisplayText(GetAcupointText(name));
         }
     }
 
+    //格式化信息
     private string GetAcupointText(string name)
     {
         string text = name + "：\r\n";

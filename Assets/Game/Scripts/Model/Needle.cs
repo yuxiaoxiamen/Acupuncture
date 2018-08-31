@@ -11,7 +11,7 @@ public class Needle : Handle
         Item item = null;
         if (IsInItem)
         {
-            switch (CurrentObject.tag)
+            switch (CurrentObject.tag)//根据对象的标签，来实例化对应的对象
             {
                 case "SwitchScene":
                     item =  SwitchSceneItem.GetInstance();
@@ -33,7 +33,7 @@ public class Needle : Handle
         }
     }
 
-    public override void OnHandleIn(object sender, PointerEventArgs e)
+    public override void OnHandleIn(object sender, PointerEventArgs e)//在进入对象时，记录对象
     {
         CurrentObject = e.target;
         IsInItem = true;
