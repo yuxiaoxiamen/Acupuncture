@@ -148,6 +148,7 @@ public class SteamVR_RenderModel : MonoBehaviour
 		system.GetStringTrackedDeviceProperty((uint)index, ETrackedDeviceProperty.Prop_RenderModelName_String, buffer, capacity, ref error);
 
 		var s = buffer.ToString();
+
 		if (renderModelName != s)
 		{
 			renderModelName = s;

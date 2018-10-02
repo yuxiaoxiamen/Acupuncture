@@ -42,5 +42,9 @@ public class Needle : Handle
     public override void OnHandleOut(object sender, PointerEventArgs e)
     {
         IsInItem = false;
+        if (e.target.tag.Equals("Body"))
+        {
+            ReplaceHandleModel();
+        }
     }
 }

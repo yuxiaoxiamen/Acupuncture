@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Game/Scenes/Start.unity
+- path: Assets/Game/Scenes/GetDirectionVector.unity
   isLoaded: 1
   isActive: 1
