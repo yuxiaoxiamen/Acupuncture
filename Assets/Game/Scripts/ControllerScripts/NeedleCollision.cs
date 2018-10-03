@@ -15,7 +15,9 @@ public class NeedleCollision : MonoBehaviour {
     {
         if (other.gameObject.tag.Equals("Acupoint"))
         {
-            Debug.Log(other.name + " " + other.transform.position + " " + vertex.position);
+            
         }
     }
+
+    
 }
