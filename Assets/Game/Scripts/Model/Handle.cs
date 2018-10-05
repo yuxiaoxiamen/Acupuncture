@@ -55,4 +55,17 @@ public abstract class Handle{
         }
         isNowDefaultModel = !isNowDefaultModel;
     }
+
+    public void RotationModel(object sender, ClickedEventArgs e)
+    {
+        //Debug.Log(e.padX + " " + e.padY);
+        if(e.padX < -0.5f&& e.padX < 0 && e.padY > -0.5f && e.padY < 0)
+        {
+            //Debug.Log("zuo");
+        }
+        else if(e.padX>0.5 && e.padY > -0.5 && e.padY < 0)
+        {
+            //Debug.Log("you");
+        }
+    }
 }

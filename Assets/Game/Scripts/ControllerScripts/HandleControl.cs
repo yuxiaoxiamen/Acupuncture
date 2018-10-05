@@ -23,5 +23,6 @@ public class HandleControl : MonoBehaviour {
         }
         vrLaserPointer.PointerIn += handle.OnHandleIn;//射线进入某个物体时
         vrLaserPointer.PointerOut += handle.OnHandleOut;//射线移除某个物体时
+        //vrTrackedController.PadClicked += handle.RotationModel;
 	}
 }

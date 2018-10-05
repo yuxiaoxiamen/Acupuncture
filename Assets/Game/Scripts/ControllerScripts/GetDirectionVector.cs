@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GetDirectionVector : MonoBehaviour
 {
-
     Vector3 direction = new Vector3(0, 0, 0);
     float distance;
     RaycastHit hit;
@@ -13,13 +12,12 @@ public class GetDirectionVector : MonoBehaviour
     float diff = 0.1f;
     float offset = 0.05f;
     List<Vector3> vectors = new List<Vector3>();
+    Vector3 normalVector = Vector3.zero;
 
     // Use this for initialization
     void Start()
     {
-        distance = transform.GetComponent<SphereCollider>().radius;
-        Debug.Log(GetNormalVector(new Vector3(1.4f, 1.0f, 0.0f),
-                new Vector3(1.4f, 1.1f, 0.1f), new Vector3(1.4f, 1.0f, 0.1f)));
+        distance = transform.GetComponent<SphereCollider>().radius*2f;
     }
 
     private void Update()
@@ -28,29 +26,30 @@ public class GetDirectionVector : MonoBehaviour
         Ray ray = new Ray(transform.position, direction);
         if(/*vectors.Count < 3 && */Physics.Raycast(ray, out hit, distance))
         {
-            //int count = vectors.Count;
-            //if(count >= 2)
-            //{
-            //    if(hit.point.x - vectors[count - 1].y > offset && 
-            //        hit.point.x - vectors[count - 1].x > offset && 
-            //        hit.point.x - vectors[count - 1].z > offset)
-            //    {
-            //        vectors.Add(hit.point);
-            //    }
-            //}
-            //if(vectors.Count == 3)
-            //{
-            //    Vector3 normalVector = GetNormalVector(vectors[0], vectors[1], vectors[2]);
-            //    Debug.Log(vectors[0]+" "+vectors[1]+" "+vectors[2]+"  "+normalVector);
-            //    Debug.DrawLine(transform.position, transform.position + normalVector, Color.red);
-            //}
-            //Debug.Log(hit.point + " "+hit.transform.name);
+            //Debug.Log(hit.point);
+            int count = vectors.Count;
+            vectors.Add(hit.point * 9000);
+            if (vectors.Count == 3)
+            {
+                normalVector = GetNormalVector(vectors[0], vectors[1], vectors[2]);
+                if (normalVector.Equals(Vector3.zero))
+                {
+                    vectors.Clear();
+                }
+                else
+                {
+                    Debug.Log(vectors[0] + " " + vectors[1] + " " + vectors[2] + "  " + normalVector);
+                    //Debug.DrawLine(transform.position, transform.position + normalVector, Color.blue);
+                    Debug.DrawRay(transform.position, normalVector, Color.blue);
+                }
+            }
             //Debug.DrawLine(ray.origin, hit.point, Color.blue);
         }
         //else
         //{
         //    Debug.DrawRay(ray.origin, direction, Color.red);
         //}
+        Debug.DrawRay(transform.position, normalVector, Color.blue);
 
         if (phi >= 2 * Mathf.PI)
         {
@@ -61,12 +60,6 @@ public class GetDirectionVector : MonoBehaviour
         {
             phi += diff;
         }
-    }
-
-    List<Vector3> RemoveDuplicate(List<Vector3> vectors)
-    {
-        HashSet<Vector3> set = new HashSet<Vector3>(vectors);
-        return new List<Vector3>(set);
     }
 
     Vector3 Radium(float theta, float phi, float r = 1.0f)
