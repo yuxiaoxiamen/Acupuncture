@@ -7,6 +7,7 @@ public abstract class Handle{
     private Transform currentObject;
     private bool isInItem;
     private static bool isNowDefaultModel = true;
+    public float rotationIncrease = 500f;
 
     public Transform CurrentObject
     {
@@ -59,13 +60,16 @@ public abstract class Handle{
     public void RotationModel(object sender, ClickedEventArgs e)
     {
         //Debug.Log(e.padX + " " + e.padY);
+        GameObject person = GameObject.Find("person");
         if(e.padX < -0.5f&& e.padX < 0 && e.padY > -0.5f && e.padY < 0)
         {
             //Debug.Log("zuo");
+            person.transform.Rotate(Vector3.up, rotationIncrease * Time.deltaTime, Space.Self);
         }
-        else if(e.padX>0.5 && e.padY > -0.5 && e.padY < 0)
+        else if(e.padX>0.5 && e.padY > -0.5 && e.padY < 0.25)
         {
-            //Debug.Log("you");
+           //Debug.Log("you");
+            person.transform.Rotate(Vector3.up, -rotationIncrease * Time.deltaTime, Space.Self);
         }
     }
 }

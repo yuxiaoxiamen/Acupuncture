@@ -10,12 +10,13 @@ public class HandleControl : MonoBehaviour {
 
 	void Start () {
         vrLaserPointer = transform.GetComponent<SteamVR_LaserPointer>();
+        vrTrackedController = transform.GetComponent<SteamVR_TrackedController>();
         Handle handle;
         if (isRadial)
         {
             handle = new Radial();
-            vrTrackedController = transform.GetComponent<SteamVR_TrackedController>();
             vrTrackedController.TriggerClicked += handle.OnHandleClick;//按下按键
+            vrTrackedController.PadClicked += handle.RotationModel;
         }
         else
         {
@@ -23,6 +24,5 @@ public class HandleControl : MonoBehaviour {
         }
         vrLaserPointer.PointerIn += handle.OnHandleIn;//射线进入某个物体时
         vrLaserPointer.PointerOut += handle.OnHandleOut;//射线移除某个物体时
-        //vrTrackedController.PadClicked += handle.RotationModel;
 	}
 }

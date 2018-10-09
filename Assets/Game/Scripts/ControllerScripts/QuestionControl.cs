@@ -43,7 +43,7 @@ public class QuestionControl : MonoBehaviour {
             int randomIndex = Random.Range(0, TextData.GetInstance().AllAcupoints.Count);//随机挑选穴位
             Status.GetInstance().CurrentQuestion = TextData.GetInstance().AllAcupoints[randomIndex];
             ++currentIndex;
-            Tool.GetInstance().DisplayText("第" + currentIndex + "题：" + Status.GetInstance().CurrentQuestion);//显示题目
+            //Tool.GetInstance().DisplayText("第" + currentIndex + "题：" + Status.GetInstance().CurrentQuestion);//显示题目
             leaveSeconds = totalTime;//重新计时
             StartCoroutine(DoCountDown());
         }
@@ -68,12 +68,12 @@ public class QuestionControl : MonoBehaviour {
         if (Status.GetInstance().CurrentAnswer.
             Equals(Status.GetInstance().CurrentQuestion))
         {
-            Tool.GetInstance().DisplayTip("正确", TipType.RIGHTANSWER);
+            Tool.GetInstance().DisplayTip("正确", new Color(0, 1, 0));
             ++correctCount;
         }
         else
         {
-            Tool.GetInstance().DisplayTip("错误", TipType.ERRORANSWER);
+            Tool.GetInstance().DisplayTip("错误", new Color(1, 0, 0));
         }
     }
 

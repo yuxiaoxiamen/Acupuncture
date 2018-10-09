@@ -11,6 +11,7 @@ TagManager:
   - Body
   - Tip
   - ModelControl
+  - Picture
   layers:
   - Default
   - TransparentFX

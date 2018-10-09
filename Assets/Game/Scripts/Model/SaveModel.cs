@@ -62,16 +62,10 @@ public class SaveModel{
         return save;
     }
 
-
-
     //存储对象为文件
     public void SaveFile()
     {
         string savePath = Application.persistentDataPath + "/leaderboard.bin";
-        IFormatter formatter = new BinaryFormatter();//序列化
-        FileStream stream = new FileStream(savePath,
-            FileMode.Create, FileAccess.Write);
-        formatter.Serialize(stream, this);
-        stream.Close();
+        Tool.GetInstance().SerializeObject(savePath, this);
     }
 }

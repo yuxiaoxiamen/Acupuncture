@@ -10,8 +10,14 @@ public class Status{
     public bool IsAssess { get; set; }//是否在考核场景
     public string CurrentQuestion { get; set; }//当前问题
     public string CurrentAnswer { get; set; }//当前答案
+    public bool IsVirtual { get; set; }
+    public Vector3 StartPosition { get; set; }
+    public Vector3 EndPosition { get; set; }
+    public Vector3 HandleStartPosition { get; set; }
 
-    private Status() { }
+    private Status() {
+        IsVirtual = false;
+    }
 
     public static Status GetInstance()
     {
