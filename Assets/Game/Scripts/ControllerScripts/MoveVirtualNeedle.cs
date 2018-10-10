@@ -60,8 +60,15 @@ public class MoveVirtualNeedle : MonoBehaviour {
             float distance = Vector3.Dot(displacement, vector) / vector.magnitude * coefficient;
             transform.position = vector.normalized * (distance * degree + vector.magnitude) +
                 Status.GetInstance().StartPosition * 2 - Status.GetInstance().EndPosition;
-            currentDepth = (transform.position - startPosition).magnitude;
-            AcupointItem.GetInstance().Dispose(other.gameObject, 1, currentDepth);
+            currentDepth = (transform.position - startPosition).magnitude * 1000;
+            if (other.tag.Equals("Acupoint"))
+            {
+                float angle = Vector3.Angle(vector, TextData.GetInstance().NormalVector3s[other.gameObject.name]);
+                angle = (90 - angle) > 0 ? 90 - angle : angle - 90;
+                angle = Mathf.Round(angle);
+                //Debug.Log(other.gameObject.name);
+                AcupointItem.GetInstance().Dispose(other.gameObject, angle, currentDepth);
+            }
             if (currentDepth > depth)
             {
                 depth = currentDepth;

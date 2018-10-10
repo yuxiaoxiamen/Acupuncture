@@ -29,7 +29,7 @@ public class Tool{
     {
         GameObject textGameObject = GameObject.FindGameObjectWithTag("Text");
         textGameObject.GetComponent<TextMesh>().text = Regex.Replace(text, @"\S{16}", "$0\r\n");
-        if (position != null)
+        if (!position.Equals(Vector3.zero))
         {
             textGameObject.transform.position = position;
         }
@@ -47,12 +47,12 @@ public class Tool{
         
         SpriteRenderer spr = picGameObject.GetComponent<SpriteRenderer>();
         spr.sprite = Resources.Load<Sprite>("feedback/" + pictureName);
-        if (position != null)
+        if (!position.Equals(Vector3.zero))
         {
             picGameObject.transform.position = position;
         }
-        DOTween.ToAlpha(() => spr.color
-        , x => spr.color = x, 0, 0.5f);
+        //DOTween.ToAlpha(() => spr.color
+        //, x => spr.color = x, 0, 0.5f);
     }
 
     //在场景中显示提示

@@ -29,7 +29,7 @@ public class Radial : Handle
     {
         CurrentObject = e.target;
         IsInItem = true;
-        if (CurrentObject.tag.Equals("Body"))
+        if (CurrentObject.tag.Equals("Body") || CurrentObject.tag.Equals("Acupoint"))
         {
             ReplaceHandleModel();
         }

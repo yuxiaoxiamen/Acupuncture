@@ -11,13 +11,13 @@ public class TextData{
     public Dictionary<string, string> AcupointureDescriptions { get; set; }//穴位描述
     public Dictionary<string, string> MassageDescriptions { get; set; }//按摩信息
     public List<string> AllAcupoints { get; set; }//所有穴位
-    public List<Vector3> NormalVector3s { get; set; }
+    public Dictionary<string, Vector3> NormalVector3s { get; set; }
     public Dictionary<string, List<AcupointureSkill>> AcupointSkills;
 
     private TextData() {
         AcupointureDescriptions = new Dictionary<string, string>();
         MassageDescriptions = new Dictionary<string, string>();
-        NormalVector3s = new List<Vector3>();
+        NormalVector3s = new Dictionary<string, Vector3>();
         AcupointSkills = new Dictionary<string, List<AcupointureSkill>>();
         ObtainNormalVectors();
     }
@@ -56,10 +56,10 @@ public class TextData{
             IFormatter formatter = new BinaryFormatter();
             FileStream stream = new FileStream(savePath + "normalVectors.bin",
                 FileMode.Open);
-            List<Vector3Serializer> vectors = (List<Vector3Serializer>)formatter.Deserialize(stream);
-            foreach(Vector3Serializer v in vectors)
+            Dictionary<string, Vector3Serializer> vectors = (Dictionary<string, Vector3Serializer>)formatter.Deserialize(stream);
+            foreach(string k in vectors.Keys)
             {
-                NormalVector3s.Add(v.V3);
+                NormalVector3s.Add(k, vectors[k].V3);
             }
             stream.Close();
         }

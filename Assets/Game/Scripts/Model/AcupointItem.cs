@@ -30,24 +30,34 @@ public class AcupointItem
         }
         else//如果是练习，就显示穴位的信息
         {
-            List<AcupointureSkill> skills = TextData.GetInstance().AcupointSkills[gob.name];
-            string text = "当前针与皮肤的夹角为" + angle + "度" + "深度为" + depth + "寸";
-            text += gob.name + "：\r\n";
+            string name = gob.name.Split('-')[0];
+            List<AcupointureSkill> skills = TextData.GetInstance().AcupointSkills[name];
+            string text = "当前针与皮肤的夹角为" + angle + "度" + "深度为" + GetLnch(depth) + "寸";
+            text += name + "：\r\n";
             foreach (var skill in skills)
             {
                 if (skill.Angle - 10 < angle && angle < skill.Angle + 10)
                 {
-                    if(skill.MinDepth < depth && depth < skill.MaxDepth)
+                    if(skill.MinDepth < GetLnch(depth) && GetLnch(depth) < skill.MaxDepth)
                     {
-                        Tool.GetInstance().DisplayPicture(skill.Feeling, gob.transform.position + new Vector3(0, 1, -1));
+                        Debug.Log("aaaa");
+                        string[] feelings = skill.Feeling.Split();
+                        for(int i = 0; i < feelings.Length; ++i)
+                        {
+                            Tool.GetInstance().DisplayPicture(feelings[i], gob.transform.position + (i + 1) * new Vector3(-7f, -3f, 1.5f));
+                        }
                     }
                 }
                 text += "正确扎法为：" + skill + "\r\n";
             }
-            Tool.GetInstance().DisplayText(text, gob.transform.position + new Vector3(0, 1, 1));
+            Tool.GetInstance().DisplayText(text, gob.transform.position + new Vector3(-7f, -3f, 1.5f));
         }
     }
 
+    float GetLnch(float number)
+    {
+        return (float)System.Math.Round(number / 66, 2);
+    }
     //public void DisplayFeeling(float depth, float min, float max)
     //{
     //    if(depth)
